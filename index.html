@@ -24,29 +24,97 @@
         }
         
         .stars, .nebula { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
-        .stars { background: radial-gradient(circle at 25% 30%, rgba(255,255,255,0.8) 1px, transparent 2px),
-                  radial-gradient(circle at 75% 60%, rgba(255,255,255,0.7) 1px, transparent 2px),
-                  linear-gradient(180deg, #0a001f 0%, #1a0033 100%);
-                  background-size: 200% 200%; animation: starTwinkle 25s linear infinite; }
-        .nebula { background: radial-gradient(circle at 30% 40%, rgba(0, 245, 255, 0.15) 0%, transparent 60%),
-                  radial-gradient(circle at 70% 70%, rgba(255, 0, 170, 0.12) 0%, transparent 70%); animation: nebulaDrift 120s ease infinite; }
+        .stars { 
+            background: radial-gradient(circle at 25% 30%, rgba(255,255,255,0.8) 1px, transparent 2px),
+                        radial-gradient(circle at 75% 60%, rgba(255,255,255,0.7) 1px, transparent 2px),
+                        linear-gradient(180deg, #0a001f 0%, #1a0033 100%);
+            background-size: 200% 200%; 
+            animation: starTwinkle 25s linear infinite; 
+        }
+        .nebula { 
+            background: radial-gradient(circle at 30% 40%, rgba(0, 245, 255, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 0, 170, 0.12) 0%, transparent 70%); 
+            animation: nebulaDrift 120s ease infinite; 
+        }
         
         @keyframes starTwinkle { 0% {background-position:0% 0%} 100%{background-position:200% 200%} }
         @keyframes nebulaDrift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,20px)} }
         
-        header { background: rgba(10,0,31,0.95); backdrop-filter: blur(10px); padding: 1.2rem 5%; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--primary); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header { 
+            background: rgba(10,0,31,0.95); 
+            backdrop-filter: blur(10px); 
+            padding: 1.2rem 5%; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            border-bottom: 3px solid var(--primary); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            background: linear-gradient(90deg, var(--primary), var(--accent)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
         
-        .tab-container { padding: 2rem 8% 1rem; display: flex; gap: 15px; border-bottom: 2px solid rgba(0,245,255,0.2); }
-        .tab-btn { padding: 12px 28px; background: rgba(20,5,50,0.6); border: 2px solid var(--primary); color: white; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; cursor: pointer; border-radius: 50px; transition: all 0.3s; }
-        .tab-btn.active { background: var(--primary); color: #0a001f; border-color: var(--gold); box-shadow: 0 0 20px var(--gold); }
+        .tab-container { 
+            padding: 2rem 8% 1rem; 
+            display: flex; 
+            gap: 15px; 
+            border-bottom: 2px solid rgba(0,245,255,0.2); 
+        }
+        .tab-btn { 
+            padding: 12px 28px; 
+            background: rgba(20,5,50,0.6); 
+            border: 2px solid var(--primary); 
+            color: white; 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            border-radius: 50px; 
+            transition: all 0.3s; 
+        }
+        .tab-btn.active { 
+            background: var(--primary); 
+            color: #0a001f; 
+            border-color: var(--gold); 
+            box-shadow: 0 0 20px var(--gold); 
+        }
         
-        .team-section { padding: 2rem 8%; display: none; }
+        .search-bar {
+            width: 90%;
+            max-width: 700px;
+            margin: 1.5rem auto 2rem;
+            padding: 16px 25px;
+            font-size: 1.1rem;
+            border: 3px solid var(--primary);
+            border-radius: 50px;
+            background: rgba(10,0,31,0.8);
+            color: white;
+            display: block;
+        }
+        
+        .team-section { padding: 1rem 8%; display: none; }
         .team-section.active { display: block; }
         
-        .team-header { display: flex; align-items: center; gap: 15px; margin-bottom: 2rem; font-family: 'Orbitron', sans-serif; font-size: 2.3rem; }
+        .team-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin-bottom: 1.5rem; 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 2.3rem; 
+        }
         
-        .players-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; }
+        .players-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+        }
         
         .player-card {
             background: rgba(20,5,50,0.75);
@@ -56,9 +124,20 @@
             cursor: pointer;
             transition: all 0.4s;
         }
-        .player-card:hover { transform: translateY(-15px) scale(1.04); box-shadow: 0 25px 50px rgba(0,245,255,0.4); }
+        .player-card:hover { 
+            transform: translateY(-15px) scale(1.04); 
+            box-shadow: 0 25px 50px rgba(0,245,255,0.4); 
+        }
         
-        .player-header { height: 240px; background: linear-gradient(135deg, #1a0033, #003344); position: relative; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+        .player-header { 
+            height: 240px; 
+            background: linear-gradient(135deg, #1a0033, #003344); 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-direction: column; 
+        }
         .ovr-circle {
             position: absolute; top: 20px; left: 20px;
             background: var(--accent); color: white;
@@ -67,15 +146,46 @@
             display: flex; align-items: center; justify-content: center;
             border: 5px solid white; box-shadow: 0 0 25px var(--accent);
         }
-        .player-avatar { width: 120px; height: 120px; border-radius: 50%; border: 5px solid var(--primary); margin-top: 30px; }
+        .player-avatar { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            border: 5px solid var(--primary); 
+            margin-top: 30px; 
+            object-fit: cover;
+        }
         
         .card-info { padding: 20px; text-align: center; }
         .player-name { font-size: 1.65rem; font-weight: bold; margin: 10px 0 5px; }
         .player-pos { color: var(--accent); font-size: 1.15rem; }
         
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,0,31,0.97); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-content { background: rgba(20,5,50,0.98); max-width: 620px; width: 92%; border-radius: 22px; border: 3px solid var(--primary); padding: 2rem; position: relative; }
-        .close { position: absolute; top: 15px; right: 25px; font-size: 2.5rem; cursor: pointer; color: var(--accent); }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(10,0,31,0.97); 
+            z-index: 1000; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .modal-content { 
+            background: rgba(20,5,50,0.98); 
+            max-width: 620px; 
+            width: 92%; 
+            border-radius: 22px; 
+            border: 3px solid var(--primary); 
+            padding: 2rem; 
+            position: relative; 
+        }
+        .close { 
+            position: absolute; 
+            top: 15px; 
+            right: 25px; 
+            font-size: 2.5rem; 
+            cursor: pointer; 
+            color: var(--accent); 
+        }
     </style>
 </head>
 <body>
@@ -89,6 +199,8 @@
         <button class="tab-btn" onclick="switchTeam(2)">TEAM 2</button>
     </div>
 
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search players...">
+
     <!-- Team 1 -->
     <div id="team1Section" class="team-section active">
         <div class="team-header" style="color:var(--gold);">🥇 TEAM 1 - CHAMPIONS</div>
@@ -101,6 +213,7 @@
         <div id="team2Grid" class="players-grid"></div>
     </div>
 
+    <!-- Modal -->
     <div id="playerModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
@@ -128,7 +241,7 @@
                 shooting: 213,
                 passing: 134,
                 description: "There always bro's before hoe's",
-                avatar: "https://cdn.discordapp.com/attachments/1519786722886680819/1520328057376739439/IMG_0865.png?ex=6a40cb57&is=6a3f79d7&hm=10bf7018ddba09a55250e7386ca4c5a9a66664a671d31bef51cc7b5d90359639&"
+                avatar: "https://cdn.discordapp.com/attachments/1519786722886680819/1520328057376739439/IMG_0865.png"
             },
             {
                 name: "MishXash",
@@ -138,7 +251,7 @@
                 shooting: 213,
                 passing: 134,
                 description: "There always bro's before hoe's",
-                avatar: "https://cdn.discordapp.com/attachments/1519786722886680819/1520328057376739439/IMG_0865.png?ex=6a40cb57&is=6a3f79d7&hm=10bf7018ddba09a55250e7386ca4c5a9a66664a671d31bef51cc7b5d90359639&"
+                avatar: "https://cdn.discordapp.com/attachments/1519786722886680819/1520328057376739439/IMG_0865.png"
             },
             {
                 name: "Vnilla",
@@ -148,7 +261,7 @@
                 shooting: 1487,
                 passing: 1026,
                 description: "What i have is not a dream, because i will make it a reality.",
-                avatar: "https://cdn.discordapp.com/attachments/1520252087521251473/1520520632557637913/IMG_1692.jpg?ex=6a417eb0&is=6a402d30&hm=53eddcfbb318e1076bfa7e9cea029afe2dcd640c0fd480f6780448a767881e0b&"
+                avatar: "https://cdn.discordapp.com/attachments/1520252087521251473/1520520632557637913/IMG_1692.jpg"
             }
         ];
 
@@ -174,7 +287,7 @@
                 card.innerHTML = `
                     <div class="player-header">
                         <div class="ovr-circle">${player.ovr}</div>
-                        <img src="${player.avatar}" class="player-avatar">
+                        <img src="${player.avatar}" class="player-avatar" onerror="this.src='https://picsum.photos/id/64/300/300'">
                     </div>
                     <div class="card-info">
                         <div class="player-name">${player.name}</div>
@@ -190,7 +303,7 @@
             document.getElementById('modalBody').innerHTML = `
                 <h2 style="text-align:center;">${p.name}</h2>
                 <p style="text-align:center;color:var(--accent);font-size:1.4rem;">${p.position} — OVR ${p.ovr}</p>
-                <p style="margin:1.5rem 0;">${p.description}</p>
+                <p style="margin:1.5rem 0;line-height:1.6;">${p.description}</p>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
                     <div style="background:rgba(0,245,255,0.1);padding:20px;border-radius:12px;text-align:center;">
                         <strong>Shooting</strong><br><span style="font-size:2.6rem;color:var(--primary);">${p.shooting}</span>
@@ -203,7 +316,9 @@
             document.getElementById('playerModal').style.display = 'flex';
         }
 
-        function closeModal() { document.getElementById('playerModal').style.display = 'none'; }
+        function closeModal() {
+            document.getElementById('playerModal').style.display = 'none';
+        }
 
         function switchTeam(n) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -217,6 +332,21 @@
                 document.getElementById('team2Section').classList.add('active');
             }
         }
+
+        // Search
+        document.getElementById('searchInput').addEventListener('input', () => {
+            const term = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            const filtered1 = team1.filter(p => 
+                p.name.toLowerCase().includes(term) || p.position.toLowerCase().includes(term)
+            );
+            const filtered2 = team2.filter(p => 
+                p.name.toLowerCase().includes(term) || p.position.toLowerCase().includes(term)
+            );
+            
+            renderTeam('team1Grid', filtered1);
+            renderTeam('team2Grid', filtered2);
+        });
 
         window.onload = () => {
             renderTeam('team1Grid', team1);
